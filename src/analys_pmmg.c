@@ -110,7 +110,7 @@ typedef struct {
  */
 static inline
 int PMMG_hGetOri( MMG5_HGeom *hash,int ip0,int ip1,int *ref,int16_t *color ) {
-  int16_t tag;
+  uint16_t tag;
 
   /* Get edge from hash table */
   if( !MMG5_hGet( hash,
@@ -312,7 +312,7 @@ int PMMG_hashNorver_edges( PMMG_pParMesh parmesh,PMMG_hn_loopvar *var ) {
   double *doublevalues;
   int    ia[2],ip[2],gip;
   int    *intvalues,idx,d,edg,j,pos;
-  int16_t tag;
+  uint16_t tag;
   int8_t  found;
 
   doublevalues = parmesh->int_node_comm->doublevalues;
@@ -1587,7 +1587,7 @@ int PMMG_update_nmgeom(PMMG_pParMesh parmesh,MMG5_pMesh mesh){
 }
 
 static inline
-int MMG5_skip_nonOldParBdy ( int8_t tag ) {
+u_int16_t MMG5_skip_nonOldParBdy ( uint16_t tag ) {
   return !(tag & MG_OLDPARBDY);
 }
 
